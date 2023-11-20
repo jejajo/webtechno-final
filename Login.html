@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitarisra</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="Login.css">
+    <script src="Login.js"></script>
+</head>
+
+<body>
+  <div id="header"></div>
+	<div id="shopping"></div>
+
+
+  <script src="constants/root.js"></script>
+	<script src="constants/catalog.js"></script>
+	<script src="utils/localStorageUtil.js"></script>
+
+	<!-- Products -->
+	<script src="components/Products/Products.js"></script>
+	<link rel="stylesheet" href="components/Products/Products.css">
+
+	<!-- Header -->
+	<script src="components/Header/Header.js"></script>
+	<link rel="stylesheet" href="components/Header/Header.css">
+
+	<!-- Shopping -->
+	<script src="components/Shopping/Shopping.js"></script>
+	<link rel="stylesheet" href="components/Shopping/Shopping.css">
+
+
+
+  <nav class="navbar" style="background-color: #e3f2fd;">
+    <div class="header-container">
+      <div class="logo">
+          <a class="navbar-brand" href="#">Guitarista</a>
+      </div>
+      <div class="links">
+          <a class="nav-link-home" aria-current="page" href="main.html">Home</a>
+      </div>
+      <div class="links">
+          <a class="nav-link-product active" href="products.html">Products</a>
+      </div>
+      <div class="links">
+          <a class="nav-link-about" href="aboutus.html">About us</a>
+      </div>
+      <div class="links">
+          <a class="nav-link">Links</a>
+      </div>
+
+      <div id="test" class="header-counter" onclick="headerPage.handlerOpenShoppingPage();">
+      🛒 ${count}
+      </div>
+      <div class="links">
+        <button id="open-modal-btn" class="sign-up">Sign Up</button>
+      </div>
+  </div>
+  </nav>
+
+
+  <div class="modal" id="my-modal">
+    <div class="modal__box">
+        <div class="login">
+          <form name='form-login'>
+      
+              <h1>REGISTER</h1>
+      
+              <label for="name">Email</label>
+              <br>
+              <input type="email" id="name" placeholder="Email" required>
+      
+              <label for="pw">Password</label>
+              <input type="password"
+                     id= "pw"
+                     placeholder="Password" required>
+      
+              <ul class="helper-text">
+                  <li class="length">Must be at least 8 characters long.</li>
+                  <li class="lowercase">Must contain a lowercase letter.</li>
+                  <li class="uppercase">Must contain an uppercase letter.</li>
+                  <li class="special">Must contain a number or special character.</li>
+              </ul>
+              <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
+      
+          </form>
+      </div>
+
+    </div>
+
+
+
+<div class="login col-5">
+    <form name='form-login' id="formLogin">
+
+        <h1>SIGN IN</h1>
+
+        <label for="userName">Email</label>
+        <br>
+        <input type="email" id="userName" placeholder="Username" required>
+
+        <label for="userPw">Password</label>
+        <input type="password" id= "userPw" placeholder="Password" required>
+
+        <div id="remember">
+            <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                   style="display: inline-block;">
+            <label>Remember me</label>
+        </div>
+
+        <a href="index.html"><input id= "login_btn" type="submit" class="lagbutton" value="Login" onclick="check()"></a>
+
+    </form>
+</div>
+</div>

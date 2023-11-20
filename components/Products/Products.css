@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/topography.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.products-container {
+	display: grid;
+    grid-gap: 45px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	width: 80%;
+	max-width: 1200px;
+	margin: var(--spacing-large) auto;
+    margin-top: 150px;
+}
+.products-element {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 25px 20px;
+	border-radius: var(--border-radius);
+    background: transparent;
+    backdrop-filter: blur(5px);
+	box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.75);
+}
+.products-element:hover{
+	box-shadow: 20px 20px 100px -50px #000;
+	transition: 0.3s;
+}
+.products-element__name {
+	margin-bottom: auto;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding-top: 30px;
+}
+.products-element__img {
+	width: 100%;
+	height: 270px;
+	margin-top: var(--spacing-medium);
+	object-fit: contain;
+}
+.products-element__price {
+	margin-top: var(--spacing-medium);
+	color: var(--color-unaccent);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.products-element__btn {
+	margin-top: var(--spacing-medium);  
+	padding: var(--spacing-small) var(--spacing-medium);
+	border: 1px solid var(--color-unaccent);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	outline: none;
+	background-color: blue;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: inherit;
+}
+
+.products-element__btn_active {
+	border: 1px solid transparent;
+	background-image: var(--linear-gradient);
+    transition: .4s;
+}
+
+.products-element__btn {
+    position: relative;
+    outline: 0;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    height: 48px;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 0px;
+    overflow: hidden
+}
+
+.products-element__btn:focus {
+    outline: none !important
+}
+
+.products-element__btn .fa-plus {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 22%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%)
+}
+
+.products-element__btn .fa-circle-thin {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: -20%;
+    font-size: 1.5em;
+    transform: translate(-50%, -50%)
+}
+
+.products-element__btn .fa-check {
+    position: absolute;
+    z-index: 1;
+    top: -52%;
+    left: 20%;
+    font-size: 0.7em;
+    transform: translate(-50%, -50%)
+}
+
+.products-element__btn span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    font-size: 16px
+}
+
+.products-element__btn span.added {
+    opacity: 0
+}
+
+.products-element__btn.clicked {
+    animation: addicon 2s ease-in forwards
+}
+
+.products-element__btn.clicked {
+    animation: color 2s ease-in forwards
+}
+
+.products-element__btn.clicked {
+    animation: circle 1s ease-in forwards
+}
+
+.products-element__btn.clickedn {
+    animation: check 2s ease-in forwards
+}
+
+.products-element__btn.clicked span.add-to-cart {
+    animation: addcart 2s ease-in forwards
+}
+
+.cart-button.clicked span.added {
+    animation: added 2s ease-in forwards
+}
+
+@keyframes addicon {
+    0% {
+        opacity: 1
+    }
+
+    30%,
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes circle {
+    0% {
+        left: -10%
+    }
+
+    100% {
+        left: 20%
+    }
+}
+
+@keyframes check {
+
+    0%,
+    40% {
+        top: -20%
+    }
+
+    60% {
+        top: 48%
+    }
+
+    100% {
+        top: 48%
+    }
+}
+
+@keyframes addcart {
+
+    0%,
+    30% {
+        opacity: 1
+    }
+
+    30%,
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes added {
+
+    0%,
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color: blue
+    }
+
+    80%,
+    100% {
+        background-color: green
+    }
+}
